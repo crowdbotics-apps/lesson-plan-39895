@@ -2,7 +2,7 @@ export const globalOptions = {
   "name": "lesson-plan-39895",
   "url": "https://lesson-plan-39895.botics.co",
   "api": "https://lesson-plan-39895.botics.co/api/v1",
-  "initialRoute": "manyRows"
+  "initialRoute": "many-rows"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
