@@ -1,3 +1,6 @@
+import { rest_auth_user_update } from "../../store/lessonplanAPI/userDetails.slice.js";
+import { rest_auth_user_retrieve } from "../../store/lessonplanAPI/userDetails.slice.js";
+import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import React, { useEffect } from "react";
@@ -6,6 +9,7 @@ import { FlatList, Text, View, StyleSheet } from "react-native";
 const Row = ({
   item
 }) => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails");
@@ -39,6 +43,8 @@ const ManyRows = () => {
       id: 5,
       name: "Row 5"
     }]);
+    dispatch(rest_auth_user_retrieve());
+    dispatch(rest_auth_user_update());
   }, []);
   return <Pressable><View style={styles.container}>
       <FlatList data={data} renderItem={({
